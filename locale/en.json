@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Open Session Folder",
+    "description": "Adds two rows to the sidebar's session menu: open the session's working directory in the system file manager, or open the folder that holds its stored session log (session.v4.jsonl.zstd)."
+  }
+}

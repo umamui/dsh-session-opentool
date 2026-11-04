@@ -1,0 +1,30 @@
+{
+  "name": "dsh-session-opentool",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Open a conversation's working directory or its stored session log from the sidebar's session menu. / 在会话「⋯」菜单里直接用系统文件管理器打开会话的工作目录，或会话记录文件所在的目录。",
+  "license": "MIT",
+  "meta": {
+    "title": "打开会话文件夹 / Open Session Folder",
+    "description": "会话「⋯」菜单里多两项：「打开所在文件夹」用文件管理器打开该会话的工作目录（cwd），「打开会话记录位置」打开会话日志 session.v4.jsonl.zstd 所在的目录。"
+  },
+  "keywords": ["deepseek-harness", "dsh", "dsh-plugin", "session", "folder", "explorer"],
+  "exports": {
+    ".": "./host.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-sidebar", "@deepseek-ai/dsh-client-ui-workspace"]
+    }
+  },
+  "files": ["host.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md"]
+}
